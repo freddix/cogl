@@ -1,11 +1,11 @@
 Summary:	A library for using 3D graphics hardware to draw pretty pictures
 Name:		cogl
-Version:	1.12.0
+Version:	1.12.2
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://download.gnome.org/sources/cogl/1.12/%{name}-%{version}.tar.xz
-# Source0-md5:	2ec55647764ee208182fbe07ee9f7e9c
+# Source0-md5:	439fd7aa2195d76b5cd8ee393f0112b4
 URL:		http://www.clutter-project.org/
 BuildRequires:	OpenGL-GLX-devel
 BuildRequires:	autoconf
