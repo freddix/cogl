@@ -1,18 +1,18 @@
 Summary:	A library for using 3D graphics hardware to draw pretty pictures
 Name:		cogl
-Version:	1.14.0
+Version:	1.16.0
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://download.gnome.org/sources/cogl/1.14/%{name}-%{version}.tar.xz
-# Source0-md5:	7eabaf4241c0b87cc9e3b0fa23fd0315
+Source0:	http://download.gnome.org/sources/cogl/1.16/%{name}-%{version}.tar.xz
+# Source0-md5:	611a61bed04354cbfffa3dc27feb6d4f
 URL:		http://www.clutter-project.org/
 BuildRequires:	OpenGL-GLX-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gdk-pixbuf-devel
+BuildRequires:	gdk-pixbuf-devel >= 2.30.0
 BuildRequires:	gettext-devel
-BuildRequires:	gobject-introspection-devel >= 1.36.0
+BuildRequires:	gobject-introspection-devel >= 1.38.0
 BuildRequires:	gtk-doc
 BuildRequires:	libdrm-devel
 BuildRequires:	libtool
