@@ -1,11 +1,11 @@
 Summary:	A library for using 3D graphics hardware to draw pretty pictures
 Name:		cogl
-Version:	1.16.2
+Version:	1.18.0
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://download.gnome.org/sources/cogl/1.16/%{name}-%{version}.tar.xz
-# Source0-md5:	aaf32bde135cf3815aa3221726bad71e
+Source0:	http://download.gnome.org/sources/cogl/1.18/%{name}-%{version}.tar.xz
+# Source0-md5:	994a29f5c02768367b6f035bfe456ba6
 URL:		http://www.clutter-project.org/
 BuildRequires:	OpenGL-GLX-devel
 BuildRequires:	autoconf
@@ -69,6 +69,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
 %find_lang %{name}
 
 %clean
@@ -81,8 +83,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS README
 %attr(755,root,root) %ghost %{_libdir}/libcogl-pango.so.??
+%attr(755,root,root) %ghost %{_libdir}/libcogl-path.so.??
 %attr(755,root,root) %ghost %{_libdir}/libcogl.so.??
 %attr(755,root,root) %{_libdir}/libcogl-pango.so.*.*.*
+%attr(755,root,root) %{_libdir}/libcogl-path.so.*.*.*
 %attr(755,root,root) %{_libdir}/libcogl.so.*.*.*
 %{_libdir}/girepository-1.0/*.typelib
 
