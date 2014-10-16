@@ -1,13 +1,15 @@
 Summary:	A library for using 3D graphics hardware to draw pretty pictures
 Name:		cogl
 Version:	1.18.2
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://download.gnome.org/sources/cogl/1.18/%{name}-%{version}.tar.xz
 # Source0-md5:	952155d526d35f297737266408e842b5
 URL:		http://www.clutter-project.org/
-BuildRequires:	OpenGL-GLX-devel
+BuildRequires:	Mesa-libGL-devel
+BuildRequires:	Mesa-libgbm-devel
+BuildRequires:	Mesa-libwayland-EGL-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gdk-pixbuf-devel >= 2.30.0
@@ -18,7 +20,7 @@ BuildRequires:	libdrm-devel
 BuildRequires:	libtool
 BuildRequires:	pango-devel
 BuildRequires:	pkg-config
-Suggests:	OpenGL
+Suggests:	Mesa-libGL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -54,12 +56,11 @@ cogl API documentation.
 %{__autoheader}
 %{__automake}
 %configure \
-	--disable-silent-rules	\
-	--enable-cairo		\
-	--enable-cogl-pango	\
-	--enable-gdk-pixbuf	\
-	--enable-glx		\
-	--enable-introspection	\
+	--disable-silent-rules	    \
+	--enable-kms-egl-platform   \
+	--enable-wayland-egl-platform	\
+	--enable-wayland-egl-server \
+	--enable-xlib-egl-platform  \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
